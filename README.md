@@ -1,0 +1,37 @@
+# react-native-note
+
+A base library for React Native Note providing required core functionalities.
+
+## Installation
+
+
+```sh
+npm install react-native-note
+```
+
+
+## Usage
+
+
+```js
+import { multiply } from 'react-native-note';
+
+// ...
+
+const result = multiply(3, 7);
+```
+
+
+## Contributing
+
+- [Development workflow](CONTRIBUTING.md#development-workflow)
+- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
+- [Code of conduct](CODE_OF_CONDUCT.md)
+
+## License
+
+MIT
+
+---
+
+Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
