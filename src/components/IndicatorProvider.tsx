@@ -1,0 +1,43 @@
+import React from "react"
+import { StyleSheet } from "react-native"
+import Animated, { useAnimatedStyle } from "react-native-reanimated"
+
+interface Props {
+  children: React.ReactNode
+  position: {
+    y: number
+  }
+}
+
+export default function IndicatorProvider({ children, position }: Props) {
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      transform: [{ translateY: position.y }]
+    }
+  })
+
+  return (
+    <>
+      {children}
+      <Animated.View
+        style={[
+          styles.indicator,
+          animatedStyles,
+          {
+            display: position.y === 0 ? "none" : "flex"
+          }
+        ]}
+      />
+    </>
+  )
+}
+
+const styles = StyleSheet.create({
+  indicator: {
+    height: 3,
+    width: "100%",
+    opacity: 0.5,
+    backgroundColor: "#0277e4ff",
+    position: "absolute"
+  }
+})
